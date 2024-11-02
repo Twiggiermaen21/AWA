@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:composition template="/templates/page-template.xhtml">
+
+	<ui:define name="pageContent">
+
+		<h:messages id="msg" />
+
+		<h:form>
+			<h:panelGrid columns="2" cellpadding="5" styleClass="bottom-space">
+				
+				<p:outputLabel for="idkwota" value="#{txtCalc.kwota}:" />
+				<p:inputText id="idkwota" value="#{calcKredBB.kwota}" required="true"
+					requiredMessage="kwota: #{txtCalcErr.calcParamRequired}"
+					converterMessage="kwota: #{txtCalcErr.calcParamIncorrect}" />
+
+
+
+				<p:outputLabel for="idmiesiecy" value="#{txtCalc.miesiecy}" />
+				<p:inputText id="idmiesiecy" value="#{calcKredBB.miesiecy}" required="true"
+					requiredMessage="miesiecy: #{txtCalcErr.calcParamRequired}"
+					converterMessage="miesiecy: #{txtCalcErr.calcParamIncorrect}" />
+
+				<p:outputLabel for="idoprocentowanie" value="#{txtCalc.oprocentowanie}" />
+				<p:inputText id="idoprocentowanie" value="#{calcKredBB.oprocentowanie}" required="true"
+					requiredMessage="oprocentowanie: #{txtCalcErr.calcParamRequired}"
+					converterMessage="oprocentowanie: #{txtCalcErr.calcParamIncorrect}" />
+
+
+
+
+				<h:commandButton value="#{txtCalc.oblicz}" action="#{calcKredBB.calc()}">
+					<f:ajax execute="@form" render="msg" />
+				</h:commandButton>
+				
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>
