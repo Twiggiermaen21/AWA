@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+	<persistence-unit name="ksiegarnia">
+		<class>ksiegarnia.AutorKsiazki</class>
+		<class>ksiegarnia.Ksiazki</class>
+		<class>ksiegarnia.KsiazkiHasAutorKsiazki</class>
+		<class>ksiegarnia.Platnosci</class>
+		<class>ksiegarnia.Rola</class>
+		<class>ksiegarnia.Uzytkownik</class>
+		<class>ksiegarnia.UzytkownikHasRola</class>
+		<class>ksiegarnia.Wiadomosci</class>
+		<class>ksiegarnia.Zamowienia</class>
+		<class>ksiegarnia.ZamowieniaHasKsiazki</class>
+	</persistence-unit>
+</persistence>
